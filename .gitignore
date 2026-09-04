@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+wheels/
+test/
+*.log
+models/curl.log
+models/reference_progress.json
+static/tracks/.transcoded
+build_reference.log

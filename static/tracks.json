@@ -1,0 +1,477 @@
+{
+  "_comment": "byCountry: ISO3 -> file in static/tracks. byProfile: music profile -> file. Player picks the hottest country with a track, else the profile track, else the synth fallback.",
+  "byCountry": {
+    "JPN": "senbazuru.mp3",
+    "CHN": "eastern-thought.mp3",
+    "TWN": "eastern-thought.mp3",
+    "KOR": "mountain-emperor.mp3",
+    "VNM": "opium.mp3",
+    "THA": "cambodian-odyssey.mp3",
+    "KHM": "cambodian-odyssey.mp3",
+    "IDN": "tikopia.mp3",
+    "PHL": "tiki-bar-mixer-by-kevin-macleod.mp3",
+    "MNG": "the-sky-of-our-ancestors.mp3",
+    "IND": "jalandhar.mp3",
+    "PAK": "indore.mp3",
+    "BGD": "dhaka.mp3",
+    "LKA": "naraina.mp3",
+    "NPL": "himalayan-atmosphere.mp3",
+    "BTN": "himalayan-atmosphere.mp3",
+    "AFG": "mystery-bazaar.mp3",
+    "NGA": "tafi-maradi-no-voice.mp3",
+    "GHA": "kumasi-groove.mp3",
+    "SEN": "digya.mp3",
+    "MLI": "bumba-crossing.mp3",
+    "CIV": "accralate.mp3",
+    "CMR": "dubakupado.mp3",
+    "COD": "dubakupado.mp3",
+    "ETH": "monkoto.mp3",
+    "KEN": "zanzibar.mp3",
+    "TZA": "zanzibar.mp3",
+    "ZAF": "anglozulu.mp3",
+    "ZWE": "ave-marimba.mp3",
+    "GBR": "skye-cuillin.mp3",
+    "IRL": "galway.mp3",
+    "FRA": "parisian.mp3",
+    "DEU": "meanwhile-in-bavaria.mp3",
+    "AUT": "meanwhile-in-bavaria.mp3",
+    "ITA": "bushwick-tarantella.mp3",
+    "ESP": "sancho-panza-gets-a-latte.mp3",
+    "PRT": "suonatore-di-liuto.mp3",
+    "GRC": "greko-sketch.mp3",
+    "POL": "angevin.mp3",
+    "RUS": "padanaya-blokov.mp3",
+    "UKR": "old-road.mp3",
+    "SWE": "moorland.mp3",
+    "NOR": "moorland.mp3",
+    "FIN": "moorland.mp3",
+    "HUN": "master-of-the-feast.mp3",
+    "ROU": "teller-of-the-tales.mp3",
+    "SRB": "balzan-groove.mp3",
+    "NLD": "pippin-the-hunchback.mp3",
+    "TUR": "mystery-bazaar.mp3",
+    "IRN": "desert-city.mp3",
+    "IRQ": "ibn-al-noor.mp3",
+    "SAU": "tabuk.mp3",
+    "JOR": "tabuk.mp3",
+    "EGY": "temple-of-the-manes.mp3",
+    "MAR": "east-of-tunesia.mp3",
+    "DZA": "east-of-tunesia.mp3",
+    "TUN": "east-of-tunesia.mp3",
+    "LBN": "ibn-al-noor.mp3",
+    "SYR": "desert-city.mp3",
+    "ISR": "lachaim.mp3",
+    "MEX": "mariachi-snooze.mp3",
+    "BRA": "suvaco-do-cristo.mp3",
+    "ARG": "tango-de-manzana.mp3",
+    "URY": "tango-de-manzana.mp3",
+    "COL": "no-frills-cumbia.mp3",
+    "PER": "nu-flute.mp3",
+    "BOL": "nu-flute.mp3",
+    "CHL": "laid-back-guitars.mp3",
+    "CUB": "cuban-sandwich.mp3",
+    "VEN": "wepa.mp3",
+    "DOM": "notanico-merengue.mp3",
+    "PRI": "no-frills-salsa.mp3",
+    "JAM": "montego.mp3",
+    "KAZ": "the-sky-of-our-ancestors.mp3",
+    "UZB": "send-for-the-horses.mp3",
+    "GEO": "truth-in-the-stones.mp3",
+    "ARM": "silver-flame.mp3",
+    "AZE": "river-fire.mp3"
+  },
+  "byProfile": {
+    "east_asian": "ishikari-lore.mp3",
+    "southeast_asian": "cambodian-odyssey.mp3",
+    "south_asian": "jalandhar.mp3",
+    "west_african": "kumasi-groove.mp3",
+    "european": "master-of-the-feast.mp3",
+    "mena": "ibn-al-noor.mp3",
+    "latin": "no-frills-cumbia.mp3",
+    "andean": "nu-flute.mp3",
+    "mediterranean": "greko-sketch.mp3",
+    "sahel": "savannah-sketch.mp3",
+    "eurasian": "the-sky-of-our-ancestors.mp3",
+    "caucasus": "truth-in-the-stones.mp3"
+  },
+  "meta": {
+    "ishikari-lore.mp3": {
+      "title": "Ishikari Lore",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ishikari%20Lore%20%28ISRC%20USUAN1100192%29.mp3"
+    },
+    "cambodian-odyssey.mp3": {
+      "title": "Cambodian Odyssey",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Cambodian%20Odyssey%20%28ISRC%20USUAN1100585%29.mp3"
+    },
+    "jalandhar.mp3": {
+      "title": "Jalandhar",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Jalandhar%20%28ISRC%20USUAN1400018%29.mp3"
+    },
+    "kumasi-groove.mp3": {
+      "title": "Kumasi Groove",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kumasi%20Groove%20%28ISRC%20USUAN1100183%29.mp3"
+    },
+    "master-of-the-feast.mp3": {
+      "title": "Master of the Feast",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Master%20of%20the%20Feast%20%28ISRC%20USUAN1400019%29.mp3"
+    },
+    "ibn-al-noor.mp3": {
+      "title": "Ibn Al-Noor",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ibn%20Al-Noor%20%28ISRC%20USUAN1100706%29.mp3"
+    },
+    "no-frills-cumbia.mp3": {
+      "title": "No Frills Cumbia",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:No%20Frills%20Cumbia%20%28ISRC%20USUAN1100275%29.mp3"
+    },
+    "nu-flute.mp3": {
+      "title": "Nu Flute",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Nu%20Flute%20%28ISRC%20USUAN1100680%29.mp3"
+    },
+    "greko-sketch.mp3": {
+      "title": "Greko (Sketch)",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Greko%20%28Sketch%29%20%28ISRC%20USUAN1100389%29.mp3"
+    },
+    "savannah-sketch.mp3": {
+      "title": "Savannah (Sketch)",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Savannah%20%28Sketch%29%20%28ISRC%20USUAN1100387%29.mp3"
+    },
+    "the-sky-of-our-ancestors.mp3": {
+      "title": "The Sky of our Ancestors",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:The%20Sky%20of%20our%20Ancestors%20%28ISRC%20USUAN1700056%29.mp3"
+    },
+    "truth-in-the-stones.mp3": {
+      "title": "Truth in the Stones",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Truth%20in%20the%20Stones%20%28ISRC%20USUAN1700059%29.mp3"
+    },
+    "senbazuru.mp3": {
+      "title": "Senbazuru",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Senbazuru%20%28ISRC%20USUAN1100821%29.mp3"
+    },
+    "eastern-thought.mp3": {
+      "title": "Eastern Thought",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Eastern%20Thought%20%28ISRC%20USUAN1100682%29.mp3"
+    },
+    "mountain-emperor.mp3": {
+      "title": "Mountain Emperor",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Mountain%20Emperor%20%28ISRC%20USUAN1700012%29.mp3"
+    },
+    "opium.mp3": {
+      "title": "Opium",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Opium%20%28ISRC%20USUAN1100371%29.mp3"
+    },
+    "tikopia.mp3": {
+      "title": "Tikopia",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tikopia%20%28ISRC%20USUAN1100827%29.mp3"
+    },
+    "tiki-bar-mixer-by-kevin-macleod.mp3": {
+      "title": "Tiki Bar Mixer by Kevin MacLeod",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tiki%20Bar%20Mixer%20by%20Kevin%20MacLeod.ogg"
+    },
+    "indore.mp3": {
+      "title": "Indore",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Indore%20%28ISRC%20USUAN1600041%29.mp3"
+    },
+    "dhaka.mp3": {
+      "title": "Dhaka",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Dhaka%20%28ISRC%20USUAN1400003%29.mp3"
+    },
+    "naraina.mp3": {
+      "title": "Naraina",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Naraina%20%28ISRC%20USUAN1400053%29.mp3"
+    },
+    "himalayan-atmosphere.mp3": {
+      "title": "Himalayan Atmosphere",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Himalayan%20Atmosphere%20%28ISRC%20USUAN1100204%29.mp3"
+    },
+    "mystery-bazaar.mp3": {
+      "title": "Mystery Bazaar",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Mystery%20Bazaar%20%28ISRC%20USUAN1700005%29.mp3"
+    },
+    "tafi-maradi-no-voice.mp3": {
+      "title": "Tafi Maradi no voice",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tafi%20Maradi%20no%20voice%20%28ISRC%20USUAN1100740%29.mp3"
+    },
+    "digya.mp3": {
+      "title": "Digya",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Digya%20%28ISRC%20USUAN1200080%29.mp3"
+    },
+    "bumba-crossing.mp3": {
+      "title": "Bumba Crossing",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bumba%20Crossing%20%28ISRC%20USUAN1500031%29.mp3"
+    },
+    "accralate.mp3": {
+      "title": "Accralate",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Accralate%20%28ISRC%20USUAN1100341%29.mp3"
+    },
+    "dubakupado.mp3": {
+      "title": "Dubakupado",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Dubakupado%20%28ISRC%20USUAN1100834%29.mp3"
+    },
+    "monkoto.mp3": {
+      "title": "Monkoto",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Monkoto%20%28ISRC%20USUAN1100432%29.mp3"
+    },
+    "zanzibar.mp3": {
+      "title": "Zanzibar",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Zanzibar%20%28ISRC%20USUAN1500006%29.mp3"
+    },
+    "anglozulu.mp3": {
+      "title": "AngloZulu",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:AngloZulu%20%28ISRC%20USUAN1100411%29.mp3"
+    },
+    "ave-marimba.mp3": {
+      "title": "Ave Marimba",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ave%20Marimba%20%28ISRC%20USUAN1700024%29.mp3"
+    },
+    "skye-cuillin.mp3": {
+      "title": "Skye Cuillin",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Skye%20Cuillin%20%28ISRC%20USUAN1100346%29.mp3"
+    },
+    "galway.mp3": {
+      "title": "Galway",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Galway%20%28ISRC%20USUAN1700016%29.mp3"
+    },
+    "parisian.mp3": {
+      "title": "Parisian",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Parisian%20%28ISRC%20USUAN1100120%29.mp3"
+    },
+    "meanwhile-in-bavaria.mp3": {
+      "title": "Meanwhile in Bavaria",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Meanwhile%20in%20Bavaria%20%28ISRC%20USUAN1500057%29.mp3"
+    },
+    "bushwick-tarantella.mp3": {
+      "title": "Bushwick Tarantella",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bushwick%20Tarantella%20%28ISRC%20USUAN1300002%29.mp3"
+    },
+    "sancho-panza-gets-a-latte.mp3": {
+      "title": "Sancho Panza gets a Latte",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Sancho%20Panza%20gets%20a%20Latte%20%28ISRC%20USUAN1100088%29.mp3"
+    },
+    "suonatore-di-liuto.mp3": {
+      "title": "Suonatore di Liuto",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Suonatore%20di%20Liuto%20%28ISRC%20USUAN1400023%29.mp3"
+    },
+    "angevin.mp3": {
+      "title": "Angevin",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Angevin%20%28ISRC%20USUAN1200110%29.mp3"
+    },
+    "padanaya-blokov.mp3": {
+      "title": "Padanaya Blokov",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Padanaya%20Blokov%20%28ISRC%20USUAN1100606%29.mp3"
+    },
+    "old-road.mp3": {
+      "title": "Old Road",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Old%20Road%20%28ISRC%20USUAN1100725%29.mp3"
+    },
+    "moorland.mp3": {
+      "title": "Moorland",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Moorland%20%28ISRC%20USUAN1200106%29.mp3"
+    },
+    "teller-of-the-tales.mp3": {
+      "title": "Teller of the Tales",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Teller%20of%20the%20Tales%20%28ISRC%20USUAN1400020%29.mp3"
+    },
+    "balzan-groove.mp3": {
+      "title": "Balzan Groove",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Balzan%20Groove%20%28ISRC%20USUAN1100311%29.mp3"
+    },
+    "pippin-the-hunchback.mp3": {
+      "title": "Pippin the Hunchback",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Pippin%20the%20Hunchback%20%28ISRC%20USUAN1400005%29.mp3"
+    },
+    "desert-city.mp3": {
+      "title": "Desert City",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Desert%20City%20%28ISRC%20USUAN1100564%29.mp3"
+    },
+    "tabuk.mp3": {
+      "title": "Tabuk",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tabuk%20%28ISRC%20USUAN1100818%29.mp3"
+    },
+    "temple-of-the-manes.mp3": {
+      "title": "Temple of the Manes",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Temple%20of%20the%20Manes%20%28ISRC%20USUAN1100053%29.mp3"
+    },
+    "east-of-tunesia.mp3": {
+      "title": "East of Tunesia",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:East%20of%20Tunesia%20%28ISRC%20USUAN1100246%29.mp3"
+    },
+    "lachaim.mp3": {
+      "title": "Lachaim",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Lachaim%20%28ISRC%20USUAN1100412%29.mp3"
+    },
+    "mariachi-snooze.mp3": {
+      "title": "Mariachi Snooze",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Mariachi%20Snooze%20%28ISRC%20USUAN1100166%29.mp3"
+    },
+    "suvaco-do-cristo.mp3": {
+      "title": "Suvaco do Cristo",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Suvaco%20do%20Cristo%20%28ISRC%20USUAN1100867%29.mp3"
+    },
+    "tango-de-manzana.mp3": {
+      "title": "Tango de Manzana",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tango%20de%20Manzana%20%28ISRC%20USUAN1100404%29.mp3"
+    },
+    "laid-back-guitars.mp3": {
+      "title": "Laid Back Guitars",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Laid%20Back%20Guitars%20%28ISRC%20USUAN1100181%29.mp3"
+    },
+    "cuban-sandwich.mp3": {
+      "title": "Cuban Sandwich",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Cuban%20Sandwich%20%28ISRC%20USUAN1600005%29.mp3"
+    },
+    "wepa.mp3": {
+      "title": "Wepa",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Wepa%20%28ISRC%20USUAN1700020%29.mp3"
+    },
+    "notanico-merengue.mp3": {
+      "title": "Notanico Merengue",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Notanico%20Merengue%20%28ISRC%20USUAN1100130%29.mp3"
+    },
+    "no-frills-salsa.mp3": {
+      "title": "No Frills Salsa",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:No%20Frills%20Salsa%20%28ISRC%20USUAN1100133%29.mp3"
+    },
+    "montego.mp3": {
+      "title": "Montego",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Montego%20%28ISRC%20USUAN1100808%29.mp3"
+    },
+    "send-for-the-horses.mp3": {
+      "title": "Send for the Horses",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Send%20for%20the%20Horses%20%28ISRC%20USUAN1700028%29.mp3"
+    },
+    "silver-flame.mp3": {
+      "title": "Silver Flame",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Silver%20Flame%20%28ISRC%20USUAN1700058%29.mp3"
+    },
+    "river-fire.mp3": {
+      "title": "River Fire",
+      "artist": "Kevin MacLeod (incompetech.com)",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:River%20Fire%20%28ISRC%20USUAN1700055%29.mp3"
+    }
+  }
+}

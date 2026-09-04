@@ -1,0 +1,14 @@
+[server]
+enableStaticServing = true
+maxUploadSize = 25
+headless = true
+
+[theme]
+base = "dark"
+primaryColor = "#ff5a3c"
+backgroundColor = "#05070f"
+secondaryBackgroundColor = "#0c101e"
+textColor = "#e8ecf5"
+
+[browser]
+gatherUsageStats = false

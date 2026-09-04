@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhenoGlobe</title>
+<link rel="icon" href="data:,">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #05070f; --panel: rgba(12, 16, 30, 0.82); --line: rgba(255,255,255,0.08);
+    --text: #e8ecf5; --muted: #8b93a7; --accent: #ff5a3c; --accent2: #ffb443; --cyan: #29d3ff;
+    --hot: #dc2626; --warm: #f97316; --mild: #facc15; --cool: #06b6d4; --cold: #1e40af;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; overflow: hidden; }
+  #globe { position: fixed; inset: 0; }
+  #globe canvas { outline: none; }
+  .panel {
+    position: fixed; top: 16px; left: 16px; bottom: 16px; width: 400px; max-width: calc(100vw - 32px);
+    background: var(--panel); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    border: 1px solid var(--line); border-radius: 18px; padding: 22px; overflow-y: auto; z-index: 5;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  }
+  .panel::-webkit-scrollbar { width: 6px; } .panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-size: 26px; margin: 0 0 4px; letter-spacing: -0.5px; }
+  h1 span { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { color: var(--muted); font-size: 13px; margin: 0 0 18px; line-height: 1.45; }
+  .slots { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .slot {
+    position: relative; aspect-ratio: 1; border: 1.5px dashed rgba(255,255,255,0.18); border-radius: 14px; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: border-color .2s, background .2s;
+    background: rgba(255,255,255,0.02); text-align: center; color: var(--muted); font-size: 12px;
+  }
+  .slot:hover, .slot.drag { border-color: var(--cyan); background: rgba(41,211,255,0.06); }
+  .slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .slot .num { font-family: 'Space Grotesk'; font-size: 22px; font-weight: 700; color: var(--text); }
+  .slot input { display: none; }
+  .slot .cam { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.6); border: 1px solid var(--line); color: #fff; border-radius: 8px; padding: 4px 8px; font-size: 11px; cursor: pointer; }
+  .slot .cam:hover { background: rgba(41,211,255,0.35); }
+  button.primary {
+    margin-top: 14px; width: 100%; padding: 13px; border: 0; border-radius: 12px; cursor: pointer; font: 600 15px Inter, sans-serif; color: #fff;
+    background: linear-gradient(90deg, var(--accent), var(--accent2)); box-shadow: 0 8px 24px rgba(255,90,60,0.35); transition: transform .1s, opacity .2s;
+  }
+  button.primary:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
+  button.primary:not(:disabled):active { transform: scale(0.98); }
+  .status { font-size: 12px; color: var(--muted); margin-top: 10px; min-height: 16px; }
+  .status.err { color: #ff7b7b; }
+  #results { display: none; margin-top: 22px; border-top: 1px solid var(--line); padding-top: 18px; }
+  .kicker { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
+  .label { font-family: 'Space Grotesk'; font-size: 24px; font-weight: 700; margin: 4px 0 2px; line-height: 1.15; }
+  .meta { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+  .bars { display: grid; gap: 7px; margin-bottom: 18px; }
+  .bar { display: grid; grid-template-columns: 170px 1fr 42px; align-items: center; gap: 8px; font-size: 12px; }
+  .bar .track { height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden; }
+  .bar .fill { height: 100%; width: 0; border-radius: 4px; background: linear-gradient(90deg, var(--cool), var(--mild), var(--hot)); transition: width .9s cubic-bezier(.2,.8,.2,1); }
+  .bar .pct { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .tier { margin-bottom: 12px; }
+  .tier h3 { font-size: 12px; margin: 0 0 6px; display: flex; align-items: center; gap: 7px; font-weight: 600; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px currentColor; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12px; padding: 4px 9px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--line); cursor: pointer; transition: background .15s; }
+  .chip:hover { background: rgba(255,255,255,0.14); }
+  .chip b { color: var(--muted); font-weight: 500; margin-left: 4px; }
+  .music { margin-top: 18px; padding: 14px; border-radius: 14px; background: linear-gradient(135deg, rgba(255,90,60,0.12), rgba(41,211,255,0.08)); border: 1px solid var(--line); }
+  .music .row { display: flex; align-items: center; gap: 10px; }
+  .music button { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--accent); color: #fff; font-size: 18px; cursor: pointer; flex-shrink: 0; box-shadow: 0 6px 18px rgba(255,90,60,0.4); }
+  .music button.small { width: 34px; height: 34px; font-size: 14px; background: rgba(255,255,255,0.12); box-shadow: none; }
+  .music .title { font-weight: 600; font-size: 14px; }
+  .music .desc { font-size: 12px; color: var(--muted); }
+  .music input[type=range] { width: 100%; margin-top: 10px; accent-color: var(--accent2); }
+  .music a { color: var(--cyan); font-size: 12px; text-decoration: none; }
+  .viz { display: flex; gap: 2px; height: 22px; align-items: flex-end; margin-left: auto; }
+  .viz i { width: 3px; background: var(--accent2); border-radius: 2px; height: 20%; animation: bounce 0.9s ease-in-out infinite; animation-play-state: paused; opacity: .5; }
+  .music.playing .viz i { animation-play-state: running; opacity: 1; }
+  .viz i:nth-child(2) { animation-delay: .15s } .viz i:nth-child(3) { animation-delay: .3s } .viz i:nth-child(4) { animation-delay: .45s } .viz i:nth-child(5) { animation-delay: .6s }
+  @keyframes bounce { 0%, 100% { height: 20% } 50% { height: 100% } }
+  .warn { margin: 0 0 12px; padding: 8px 10px; border-radius: 10px; background: rgba(255,180,67,0.12); border: 1px solid rgba(255,180,67,0.35); font-size: 12px; color: #ffd58a; line-height: 1.45; }
+  details.macro { margin: -6px 0 16px; font-size: 12px; color: var(--muted); }
+  details.macro summary { cursor: pointer; margin-bottom: 8px; }
+  .bar .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .disclaimer { margin-top: 18px; font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .legend { position: fixed; right: 20px; bottom: 20px; z-index: 5; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 12px; backdrop-filter: blur(12px); }
+  .legend .grad { height: 10px; border-radius: 5px; background: linear-gradient(90deg, #facc15, #fb923c, #f97316, #dc2626); margin: 6px 0 4px; }
+  .legend .ends { display: flex; justify-content: space-between; color: var(--muted); }
+  .hover { position: fixed; right: 20px; top: 20px; z-index: 5; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; font-size: 13px; display: none; backdrop-filter: blur(12px); min-width: 180px; }
+  .hover b { font-family: 'Space Grotesk'; font-size: 16px; display: block; }
+  .hover .pct { font-size: 22px; font-weight: 700; }
+  .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.2); border-top-color: var(--accent2); border-radius: 50%; animation: spin .8s linear infinite; vertical-align: -3px; margin-right: 6px; }
+  @keyframes spin { to { transform: rotate(360deg) } }
+  #camModal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 20; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 14px; }
+  #camModal video { width: min(520px, 90vw); border-radius: 16px; transform: scaleX(-1); }
+  #camModal .btns { display: flex; gap: 10px; }
+  #camModal button { padding: 10px 20px; border-radius: 10px; border: 1px solid var(--line); background: rgba(255,255,255,0.08); color: #fff; cursor: pointer; font-size: 14px; }
+  #camModal button.go { background: var(--accent); border-color: transparent; }
+  body.embed .slots, body.embed #go, body.embed .status, body.embed .sub { display: none; }
+  body.embed #results { margin-top: 0; border-top: 0; padding-top: 0; }
+  body.embed .panel { top: 12px; left: 12px; bottom: 12px; }
+  @media (max-width: 720px) { .panel { width: auto; right: 16px; bottom: auto; max-height: 70vh; } .legend, .hover { display: none !important; } }
+</style>
+</head>
+<body>
+<div id="globe"></div>
+
+<div class="panel">
+  <h1>Pheno<span>Globe</span></h1>
+  <p class="sub">Upload two shots of your face. A face-attribute model estimates your phenotype, the globe heats up where that look is common, and the speakers play something from there.</p>
+
+  <div class="slots">
+    <label class="slot" id="slot1">
+      <span class="num">1</span><span>Front-facing shot<br>drop / click</span>
+      <input type="file" accept="image/*">
+      <span class="cam" data-slot="1">📷 camera</span>
+    </label>
+    <label class="slot" id="slot2">
+      <span class="num">2</span><span>Second angle<br>drop / click</span>
+      <input type="file" accept="image/*">
+      <span class="cam" data-slot="2">📷 camera</span>
+    </label>
+  </div>
+  <button class="primary" id="go" disabled>Analyze my face</button>
+  <div class="status" id="status"></div>
+
+  <div id="results">
+    <div class="kicker">Closest populations</div>
+    <div class="label" id="label">—</div>
+    <div class="meta" id="meta"></div>
+    <div class="warn" id="warnings" hidden></div>
+    <div class="bars" id="bars"></div>
+    <details class="macro"><summary>Broad groups (classifier output)</summary><div class="bars" id="macroBars"></div></details>
+
+    <div class="tier"><h3><span class="dot" style="color:var(--hot)"></span>Hot — very likely</h3><div class="chips" id="hot"></div></div>
+    <div class="tier"><h3><span class="dot" style="color:var(--warm)"></span>Warm — likely</h3><div class="chips" id="warm"></div></div>
+    <div class="tier"><h3><span class="dot" style="color:var(--cool)"></span>Possible</h3><div class="chips" id="mild"></div></div>
+
+    <div class="music" id="music">
+      <div class="row">
+        <button id="playBtn" title="Play / pause">▶</button>
+        <button id="nextBtn" class="small" title="Next track" hidden>⏭</button>
+        <div>
+          <div class="title" id="musicTitle">—</div>
+          <div class="desc" id="musicDesc">Generated live for this phenotype</div>
+        </div>
+        <div class="viz"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <input type="range" id="vol" min="0" max="1" step="0.01" value="0.7">
+      <a id="ytLink" href="#" target="_blank" rel="noopener">▶ Hear the real thing on YouTube ↗</a>
+    </div>
+
+    <p class="disclaimer">Toy, not science. A face model (FairFace, ResNet-34 trained on a balanced 108k-face dataset) reads seven broad groups from pixels; the finer population split comes from a vision model when one is configured, otherwise from the shape of that distribution. Nothing here reads DNA: it is a phenotype resemblance guess, not ancestry or nationality. Photos are processed locally and deleted immediately.</p>
+  </div>
+</div>
+
+<div class="hover" id="hover"></div>
+<div class="legend">Phenotype match<div class="grad"></div><div class="ends"><span>likely</span><span>very likely</span></div></div>
+
+<div id="camModal">
+  <video id="camVideo" autoplay playsinline muted></video>
+  <div class="btns"><button id="camCancel">Cancel</button><button class="go" id="camSnap">Capture</button></div>
+</div>
+
+<script>window.PHENO_BASE = window.PHENO_BASE || '/static'; document.write('<script src="' + window.PHENO_BASE + '/globe.gl.min.js"><\/script><script src="' + window.PHENO_BASE + '/music.js"><\/script>');</script>
+<script>
+// ---------- state ----------
+const files = { 1: null, 2: null };
+let features = [], heat = {}, names = {}, centroids = {}, world;
+
+// ---------- colours ----------
+const STOPS = [[0.45, [250, 204, 21, 0.6]], [0.6, [251, 146, 60, 0.78]], [0.75, [249, 115, 22, 0.88]], [1, [220, 38, 38, 0.96]]];
+function heatColor(s) {
+  if (!s || s < 0.45) return 'rgba(255,255,255,0.035)';  // only warm and hot countries get painted
+  for (let i = 1; i < STOPS.length; i++) {
+    const [s0, c0] = STOPS[i - 1], [s1, c1] = STOPS[i];
+    if (s <= s1) { const k = (s - s0) / (s1 - s0); const c = c0.map((v, j) => v + (c1[j] - v) * k); return `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${c[3].toFixed(2)})`; }
+  }
+  return 'rgba(220,38,38,0.95)';
+}
+const score = f => heat[f.properties.ADM0_A3] || 0;
+const tierOf = s => s >= 0.75 ? 'hot' : s >= 0.45 ? 'warm' : s >= 0.2 ? 'mild' : null;
+
+// ---------- globe ----------
+function centroid(f) {
+  const g = f.geometry; let rings = g.type === 'Polygon' ? [g.coordinates[0]] : g.coordinates.map(p => p[0]);
+  const ring = rings.reduce((a, b) => (b.length > a.length ? b : a), rings[0]);
+  const s = ring.reduce((acc, [x, y]) => [acc[0] + x, acc[1] + y], [0, 0]);
+  return { lng: s[0] / ring.length, lat: s[1] / ring.length };
+}
+fetch(window.PHENO_BASE + '/countries.geojson').then(r => r.json()).then(geo => {
+  features = geo.features.filter(f => f.properties.ADM0_A3 !== 'ATA');
+  features.forEach(f => { names[f.properties.ADM0_A3] = f.properties.NAME; centroids[f.properties.ADM0_A3] = centroid(f); });
+  world = Globe()(document.getElementById('globe'))
+    .globeImageUrl(window.PHENO_BASE + '/earth.jpg').backgroundImageUrl(window.PHENO_BASE + '/sky.png')
+    .showAtmosphere(true).atmosphereColor('#6ab7ff').atmosphereAltitude(0.22)
+    .polygonsData(features)
+    .polygonCapColor(f => heatColor(score(f)))
+    .polygonSideColor(f => { const s = score(f); return s >= 0.45 ? heatColor(s).replace(/[\d.]+\)$/, '0.35)') : 'rgba(0,0,0,0)'; })
+    .polygonStrokeColor(() => 'rgba(255,255,255,0.12)')
+    .polygonAltitude(f => { const s = score(f); return s >= 0.45 ? 0.01 + (s - 0.45) * 0.22 : 0.006; })
+    .polygonsTransitionDuration(900)
+    .onPolygonHover(f => {
+      const h = document.getElementById('hover');
+      if (!f) { h.style.display = 'none'; return; }
+      const s = score(f), t = tierOf(s);
+      h.innerHTML = `<b>${f.properties.NAME}</b><span class="pct" style="color:${s >= 0.45 ? heatColor(s).replace(/,[\d.]+\)$/, ',1)') : 'var(--muted)'}">${Math.round(s * 100)}%</span><br><span style="color:var(--muted)">${t === 'hot' ? 'very likely' : t === 'warm' ? 'likely' : t === 'mild' ? 'possible' : 'unlikely'} for this phenotype</span>`;
+      h.style.display = 'block';
+    })
+    .ringColor(() => t => `rgba(255,90,60,${1 - t})`).ringMaxRadius(7).ringPropagationSpeed(2.5).ringRepeatPeriod(1000);
+  world.controls().autoRotate = true; world.controls().autoRotateSpeed = 0.45;
+  world.pointOfView({ lat: 20, lng: 10, altitude: 2.3 });
+});
+window.addEventListener('resize', () => world && world.width(innerWidth).height(innerHeight));
+
+// ---------- embed mode (Streamlit): result is injected as window.PHENO_DATA ----------
+if (window.PHENO_DATA) {
+  document.body.classList.add('embed');
+  const waitReady = () => (world && features.length && Object.keys(tracks.byProfile || {}).length) ? render(window.PHENO_DATA) : setTimeout(waitReady, 150);
+  waitReady();
+}
+
+// ---------- uploads ----------
+function setFile(n, file) {
+  if (!file || !file.type.startsWith('image/')) return;
+  files[n] = file;
+  const slot = document.getElementById('slot' + n);
+  let img = slot.querySelector('img'); if (!img) { img = document.createElement('img'); slot.prepend(img); }
+  img.src = URL.createObjectURL(file);
+  document.getElementById('go').disabled = !(files[1] && files[2]);
+}
+[1, 2].forEach(n => {
+  const slot = document.getElementById('slot' + n), input = slot.querySelector('input');
+  input.addEventListener('change', () => setFile(n, input.files[0]));
+  slot.addEventListener('dragover', e => { e.preventDefault(); slot.classList.add('drag'); });
+  slot.addEventListener('dragleave', () => slot.classList.remove('drag'));
+  slot.addEventListener('drop', e => { e.preventDefault(); slot.classList.remove('drag'); setFile(n, e.dataTransfer.files[0]); });
+});
+document.addEventListener('paste', e => { const f = [...e.clipboardData.files][0]; if (f) setFile(files[1] ? 2 : 1, f); });
+
+// camera capture
+let camSlot = 1, stream = null;
+document.querySelectorAll('.cam').forEach(b => b.addEventListener('click', async e => {
+  e.preventDefault(); e.stopPropagation(); camSlot = +b.dataset.slot;
+  try { stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user', width: 960 } }); }
+  catch (err) { setStatus('Camera unavailable: ' + err.message, true); return; }
+  document.getElementById('camVideo').srcObject = stream; document.getElementById('camModal').style.display = 'flex';
+}));
+function closeCam() { if (stream) stream.getTracks().forEach(t => t.stop()); stream = null; document.getElementById('camModal').style.display = 'none'; }
+document.getElementById('camCancel').onclick = closeCam;
+document.getElementById('camSnap').onclick = () => {
+  const v = document.getElementById('camVideo'), c = document.createElement('canvas'); c.width = v.videoWidth; c.height = v.videoHeight;
+  const g = c.getContext('2d'); g.translate(c.width, 0); g.scale(-1, 1); g.drawImage(v, 0, 0);
+  c.toBlob(b => { setFile(camSlot, new File([b], `camera-${camSlot}.jpg`, { type: 'image/jpeg' })); closeCam(); }, 'image/jpeg', 0.92);
+};
+
+// ---------- analysis ----------
+function setStatus(msg, err = false) { const s = document.getElementById('status'); s.className = 'status' + (err ? ' err' : ''); s.innerHTML = msg; }
+const CAT_LABELS = { asian: 'East Asian', 'southeast asian': 'Southeast Asian', indian: 'South Asian', black: 'Sub-Saharan African', white: 'European', 'middle eastern': 'Middle Eastern / N. African', 'latino hispanic': 'Latin American' };
+
+document.getElementById('go').addEventListener('click', async () => {
+  const btn = document.getElementById('go'); btn.disabled = true;
+  setStatus('<span class="spinner"></span>Detecting faces and running the classifier…');
+  const fd = new FormData(); fd.append('photo1', files[1]); fd.append('photo2', files[2]);
+  try {
+    const r = await fetch('/analyze', { method: 'POST', body: fd });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.detail || r.statusText);
+    render(data); setStatus(`Done. ${data.faces_used === 2 ? 'Both shots used.' : 'Only one usable face found.'}`);
+  } catch (err) { setStatus('Failed: ' + err.message, true); }
+  btn.disabled = false;
+});
+
+function render(d) {
+  heat = d.heat;
+  const res = document.getElementById('results'); res.style.display = 'block';
+  document.getElementById('label').textContent = d.summary.label;
+  const bits = [`${d.summary.confidence} confidence`];
+  if (d.age) bits.push(`looks ~${d.age}`);
+  if (d.gender) bits.push(d.gender.toLowerCase());
+  if (d.summary.method) bits.push(d.summary.method);
+  document.getElementById('meta').textContent = bits.join(' · ');
+  const warn = document.getElementById('warnings');
+  warn.hidden = !(d.warnings && d.warnings.length);
+  warn.textContent = d.warnings && d.warnings.length ? '⚠ ' + d.warnings.join(' · ') : '';
+  const barRow = (name, pct, title) => `<div class="bar"><span class="name" title="${title || name}">${name}</span><div class="track"><div class="fill" data-w="${pct}"></div></div><span class="pct">${pct < 1 ? '<1' : Math.round(pct)}%</span></div>`;
+  const bars = document.getElementById('bars'); bars.innerHTML = '';
+  (d.populations || []).forEach(p => bars.insertAdjacentHTML('beforeend', barRow(p.name, p.pct)));
+  const mb = document.getElementById('macroBars'); mb.innerHTML = '';
+  Object.entries(d.macro || {}).sort((a, b) => b[1] - a[1]).forEach(([k, v]) => mb.insertAdjacentHTML('beforeend', barRow(CAT_LABELS[k] || k, v * 100)));
+  requestAnimationFrame(() => document.querySelectorAll('#results .fill').forEach(f => (f.style.width = f.dataset.w + '%')));
+
+  const ranked = Object.entries(heat).filter(([iso]) => names[iso]).sort((a, b) => b[1] - a[1]);
+  ['hot', 'warm', 'mild'].forEach(t => (document.getElementById(t).innerHTML = ''));
+  ranked.forEach(([iso, s]) => {
+    const t = tierOf(s); if (!t) return;
+    const el = document.getElementById(t);
+    if (el.children.length >= 18) return;
+    el.insertAdjacentHTML('beforeend', `<span class="chip" data-iso="${iso}">${names[iso]}<b>${Math.round(s * 100)}%</b></span>`);
+  });
+  document.querySelectorAll('.chip').forEach(c => c.onclick = () => flyTo(c.dataset.iso, 1.4));
+
+  // globe update
+  world.polygonsData([...features]);
+  const top = ranked.slice(0, 6);
+  const w = top.reduce((a, [, s]) => a + s, 0);
+  const target = top.reduce((a, [iso, s]) => ({ lat: a.lat + centroids[iso].lat * s / w, lng: a.lng + centroids[iso].lng * s / w }), { lat: 0, lng: 0 });
+  world.ringsData(top.slice(0, 3).map(([iso]) => centroids[iso]));
+  world.controls().autoRotate = false;
+  world.pointOfView({ lat: target.lat, lng: target.lng, altitude: 1.7 }, 2200);
+  setTimeout(() => { world.controls().autoRotate = true; world.controls().autoRotateSpeed = 0.25; }, 2400);
+
+  // music
+  startMusic(d.summary.music, ranked, d.summary.music_iso);
+}
+function flyTo(iso, alt = 1.2) { const c = centroids[iso]; world.controls().autoRotate = false; world.pointOfView({ ...c, altitude: alt }, 1200); }
+
+// ---------- music UI ----------
+let currentProfile = null, currentRanked = [], tracks = { byCountry: {}, byProfile: {} }, audio = null;
+fetch(window.PHENO_BASE + '/tracks.json').then(r => r.json()).then(t => (tracks = t)).catch(() => {});
+// tracks.json values may be a single filename or a list; we keep a small playlist and rotate through it.
+const asList = v => (Array.isArray(v) ? v : v ? [v] : []);
+let playlist = [], playlistPos = 0;
+function buildPlaylist(profile, ranked, preferred) {
+  const out = [];
+  if (preferred && tracks.byCountry[preferred]) asList(tracks.byCountry[preferred]).forEach(f => out.push({ key: preferred, file: f, why: names[preferred] }));
+  for (const [iso] of ranked.slice(0, 8)) asList(tracks.byCountry[iso]).forEach(f => out.push({ key: iso, file: f, why: names[iso] }));
+  asList(tracks.byProfile[profile]).forEach(f => out.push({ key: profile, file: f, why: (Music.profiles[profile] || {}).title || profile }));
+  // shuffle within the hottest country first, then keep order of heat
+  return out;
+}
+function pickTrack(profile, ranked, preferred) {
+  playlist = buildPlaylist(profile, ranked, preferred);
+  if (!playlist.length) return null;
+  const top = playlist.filter(t => t.key === playlist[0].key);
+  playlistPos = Math.floor(Math.random() * top.length);
+  return playlist[playlistPos];
+}
+function nextTrack() {
+  if (!playlist.length) return;
+  playlistPos = (playlistPos + 1) % playlist.length;
+  playTrack(playlist[playlistPos]);
+}
+const targetVol = () => +document.getElementById('vol').value;
+function setPlayingUI(on, title, desc) {
+  document.getElementById('music').classList.toggle('playing', on);
+  document.getElementById('playBtn').textContent = on ? '❚❚' : '▶';
+  if (title) document.getElementById('musicTitle').textContent = title;
+  if (desc) document.getElementById('musicDesc').textContent = desc;
+}
+function stopAll() { if (audio) { audio.pause(); audio = null; } setPlayingUI(false); }
+function playTrack(t) {
+  if (audio) { audio.pause(); audio = null; }
+    audio = new Audio(window.PHENO_BASE + '/tracks/' + encodeURIComponent(t.file)); audio.volume = 0;
+  const FADE = 1.8;
+  const ramp = (to, secs) => { const a = audio, from = a.volume, t0 = performance.now(); const id = setInterval(() => { if (audio !== a) return clearInterval(id); const k = Math.min(1, (performance.now() - t0) / (secs * 1000)); a.volume = from + (to - from) * k; if (k >= 1) clearInterval(id); }, 40); };
+  audio.addEventListener('play', () => ramp(targetVol(), FADE));
+  audio.addEventListener('timeupdate', () => { const a = audio; if (a && a.duration && a.duration - a.currentTime < FADE && !a.fading) { a.fading = true; ramp(0, FADE); } });
+  audio.addEventListener('ended', () => { if (playlist.length > 1) nextTrack(); else if (audio) { audio.fading = false; audio.currentTime = 0; audio.play(); } });
+  audio.addEventListener('error', () => { setStatus('Track failed to load: ' + t.file, true); if (playlist.length > 1) nextTrack(); });
+  audio.play().catch(() => {});
+  const m = (tracks.meta || {})[t.file] || (tracks.meta || {})[t.key] || {};
+  setPlayingUI(true, m.title || t.file.replace(/\.[a-z0-9]+$/i, ''), (t.why ? 'For ' + t.why : '') + (m.artist ? ' · ' + m.artist : '') + (m.license ? ' · ' + m.license : ''));
+  const a = document.getElementById('ytLink');
+  if (m.source) { a.href = m.source; a.textContent = '▶ Source & licence on Wikimedia Commons ↗'; }
+  document.getElementById('nextBtn').hidden = playlist.length < 2;
+}
+let currentPreferred = null;
+function startMusic(name, ranked = currentRanked, preferred = currentPreferred) {
+  currentProfile = name; currentRanked = ranked; currentPreferred = preferred; stopAll();
+  const p = Music.profiles[name] || Music.profiles.european || {};
+  const yt = document.getElementById('ytLink'); yt.href = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(p.search); yt.textContent = '▶ Hear the real thing on YouTube ↗';
+  const vol = +document.getElementById('vol').value;
+  const t = pickTrack(name, ranked, preferred);
+  if (t) playTrack(t);
+  else { setPlayingUI(false, 'No track for this region yet', 'Add one to static/tracks and tracks.json'); document.getElementById('nextBtn').hidden = true; }
+}
+document.getElementById('playBtn').onclick = () => {
+  if (!audio) return startMusic(currentProfile);
+  if (audio.paused) { audio.play(); setPlayingUI(true); } else { audio.pause(); setPlayingUI(false); }
+};
+document.getElementById('nextBtn').onclick = nextTrack;
+document.getElementById('vol').oninput = e => { const v = +e.target.value; if (audio && !audio.fading) audio.volume = v; };
+</script>
+</body>
+</html>
