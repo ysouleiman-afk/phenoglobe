@@ -38,8 +38,9 @@ with col1:
     f1 = st.file_uploader("Photo 1 · front-facing", type=["jpg", "jpeg", "png", "webp"], key="p1")
 with col2:
     f2 = st.file_uploader("Photo 2 · a second angle", type=["jpg", "jpeg", "png", "webp"], key="p2")
-with st.expander("…or use the camera"):
-    cam = st.camera_input("Take a shot")
+cam = None
+if st.toggle("Use my camera instead", value=False):
+    cam = st.camera_input("Take a shot (it fills the first empty slot)")
 if cam is not None and f1 is None:
     f1 = cam
 elif cam is not None and f2 is None:

@@ -53,6 +53,21 @@ the heuristic, weight `PHENO_KNN_WEIGHT`, default 0.6) > heuristic.
 The result panel also shows input-quality warnings (black-and-white photo, profile
 view, small face) since those are the main cause of silly answers.
 
+## Deploy on Streamlit Community Cloud
+
+`streamlit_app.py` wraps the same pipeline for https://share.streamlit.io (free):
+
+1. Push this folder to a GitHub repo (everything needed is committed: models, tracks, refs).
+2. On share.streamlit.io: **New app** -> pick the repo, branch `main`, main file
+   `streamlit_app.py` -> **Deploy**. First boot takes a few minutes (installs
+   onnxruntime + OpenCV, loads the 85 MB FairFace model).
+3. Optional: add `ANTHROPIC_API_KEY` under *Advanced settings -> Secrets* to enable the
+   vision-LLM refiner.
+
+Static assets (globe textures, tracks) are served by Streamlit from `static/` via
+`enableStaticServing` in `.streamlit/config.toml`. Local test:
+`.venv\Scripts\python -m streamlit run streamlit_app.py`.
+
 ## How it works
 
 - `main.py` – FastAPI. `POST /analyze` detects + eye-aligns the largest face in
