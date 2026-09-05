@@ -129,9 +129,6 @@
     <div class="bars" id="bars"></div>
     <details class="macro"><summary>Broad groups (classifier output)</summary><div class="bars" id="macroBars"></div></details>
 
-    <div class="tier"><h3><span class="dot" style="color:var(--hot)"></span>Hot — very likely</h3><div class="chips" id="hot"></div></div>
-    <div class="tier"><h3><span class="dot" style="color:var(--warm)"></span>Warm — likely</h3><div class="chips" id="warm"></div></div>
-    <div class="tier"><h3><span class="dot" style="color:var(--cool)"></span>Possible</h3><div class="chips" id="mild"></div></div>
 
     <div class="music" id="music">
       <div class="row">
@@ -309,14 +306,6 @@ function render(d) {
   requestAnimationFrame(() => document.querySelectorAll('#results .fill').forEach(f => (f.style.width = f.dataset.w + '%')));
 
   const ranked = Object.entries(heat).filter(([iso]) => names[iso]).sort((a, b) => b[1] - a[1]);
-  ['hot', 'warm', 'mild'].forEach(t => (document.getElementById(t).innerHTML = ''));
-  ranked.forEach(([iso, s]) => {
-    const t = tierOf(s); if (!t) return;
-    const el = document.getElementById(t);
-    if (el.children.length >= 18) return;
-    el.insertAdjacentHTML('beforeend', `<span class="chip" data-iso="${iso}">${names[iso]}<b>${Math.round(s * 100)}%</b></span>`);
-  });
-  document.querySelectorAll('.chip').forEach(c => c.onclick = () => flyTo(c.dataset.iso, 1.4));
 
   // globe update
   world.polygonsData([...features]);
