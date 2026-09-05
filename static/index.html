@@ -170,9 +170,10 @@
   for (var i = 0; i < cands.length; i++) {
     try {
       var x = new XMLHttpRequest();
-      x.open('HEAD', cands[i] + '/countries.geojson', false);
+      x.open('GET', cands[i] + '/_probe.txt', false);   // GET, not HEAD: Streamlit Cloud rejects HEAD
       x.send();
-      if (x.status === 200) { base = cands[i]; break; }
+      // a soft 404 redirects to the app shell and still returns 200, so check the payload
+      if (x.status === 200 && x.responseText.indexOf('phenoglobe-static-ok') === 0) { base = cands[i]; break; }
     } catch (e) {}
   }
   window.PHENO_BASE = base || '/static';
