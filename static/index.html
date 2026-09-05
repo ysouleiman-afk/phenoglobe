@@ -159,7 +159,27 @@
   <div class="btns"><button id="camCancel">Cancel</button><button class="go" id="camSnap">Capture</button></div>
 </div>
 
-<script>window.PHENO_BASE = window.PHENO_BASE || '/static'; document.write('<script src="' + window.PHENO_BASE + '/globe.gl.min.js"><\/script><script src="' + window.PHENO_BASE + '/music.js"><\/script>');</script>
+<script>
+// Asset base differs by host: FastAPI serves /static, Streamlit /app/static, and Streamlit
+// Community Cloud proxies that to /~/+/app/static. Probe for the one that answers.
+(function () {
+  var cands = [];
+  if (window.PHENO_BASE) cands.push(window.PHENO_BASE);
+  cands.push('/~/+/app/static', '/app/static', '/static');
+  var base = null;
+  for (var i = 0; i < cands.length; i++) {
+    try {
+      var x = new XMLHttpRequest();
+      x.open('HEAD', cands[i] + '/countries.geojson', false);
+      x.send();
+      if (x.status === 200) { base = cands[i]; break; }
+    } catch (e) {}
+  }
+  window.PHENO_BASE = base || '/static';
+  document.write('<scr' + 'ipt src="' + window.PHENO_BASE + '/globe.gl.min.js"></scr' + 'ipt>');
+  document.write('<scr' + 'ipt src="' + window.PHENO_BASE + '/music.js"></scr' + 'ipt>');
+})();
+</script>
 <script>
 // ---------- state ----------
 const files = { 1: null, 2: null };

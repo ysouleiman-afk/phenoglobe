@@ -77,7 +77,7 @@ if result:
         st.info("A flat spread means the models couldn't pin it down. Two bright, front-facing shots help a lot.")
 
     html = (STATIC / "index.html").read_text(encoding="utf-8")
-    inject = (f"<script>window.PHENO_DATA = {json.dumps(result)}; window.PHENO_BASE = '/app/static';</script>")
+    inject = f"<script>window.PHENO_DATA = {json.dumps(result)};</script>"  # index.html probes for the asset base
     html = html.replace("<title>PhenoGlobe</title>", "<title>PhenoGlobe</title>" + inject, 1)
     components.html(html, height=760, scrolling=False)
     st.caption("Music: Kevin MacLeod (incompetech.com), CC BY 3.0 · Map: Natural Earth · "
