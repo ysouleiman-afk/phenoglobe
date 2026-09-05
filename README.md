@@ -80,10 +80,16 @@ Static assets (globe textures, tracks) are served by Streamlit from `static/` vi
   both strong.
 - `static/index.html` – globe.gl (Three.js) globe with extruded heat polygons,
   pulsing rings on the top countries, fly-to camera, tiers (hot / warm / possible).
-- `static/tracks.json` + `static/tracks/` – one real track per country / profile
-  (Kevin MacLeod, CC BY 3.0, fetched from Wikimedia Commons by `fetch_macleod.py`,
-  trimmed to ~90 s at 96 kbps by `transcode_tracks.py`). The player picks the
-  hottest country that has a track, else the profile track.
+- `static/tracks.json` + `static/tracks/` – one **authentic** recording per country /
+  population: field recordings, folk archives and historic discs from Wikimedia Commons
+  (Cretan rizitiko, Sicilian *Ciuri Ciuri*, *Kâtibim*, Azerbaijani mugham, Gardel 1924,
+  Montes y Manrique 1911, Fisk Jubilee Singers 1909, Hausa emirate music, Swedish folk
+  archive, ...). Curated in `fetch_authentic.py` (picks resolved against a Commons crawl
+  built by `crawl_music.py` + `gap_fill.py`), trimmed to 75 s at 96 kbps by
+  `transcode_tracks.py`. Licences are a mix of CC0 / public domain / CC BY(-SA); each
+  track's title, performer, licence and Commons source link show in the player.
+  No generic royalty-free library music. The player prefers the top population's home
+  country, then the population's own recording.
 - `static/music.js` – Web Audio synth fallback used only when no track exists.
 
 Toy, not science. Phenotype != ancestry != nationality.

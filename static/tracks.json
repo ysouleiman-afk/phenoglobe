@@ -1,477 +1,419 @@
 {
-  "_comment": "byCountry: ISO3 -> file in static/tracks. byProfile: music profile -> file. Player picks the hottest country with a track, else the profile track, else the synth fallback.",
   "byCountry": {
-    "JPN": "senbazuru.mp3",
-    "CHN": "eastern-thought.mp3",
-    "TWN": "eastern-thought.mp3",
-    "KOR": "mountain-emperor.mp3",
-    "VNM": "opium.mp3",
-    "THA": "cambodian-odyssey.mp3",
-    "KHM": "cambodian-odyssey.mp3",
-    "IDN": "tikopia.mp3",
-    "PHL": "tiki-bar-mixer-by-kevin-macleod.mp3",
-    "MNG": "the-sky-of-our-ancestors.mp3",
-    "IND": "jalandhar.mp3",
-    "PAK": "indore.mp3",
-    "BGD": "dhaka.mp3",
-    "LKA": "naraina.mp3",
-    "NPL": "himalayan-atmosphere.mp3",
-    "BTN": "himalayan-atmosphere.mp3",
-    "AFG": "mystery-bazaar.mp3",
-    "NGA": "tafi-maradi-no-voice.mp3",
-    "GHA": "kumasi-groove.mp3",
-    "SEN": "digya.mp3",
-    "MLI": "bumba-crossing.mp3",
-    "CIV": "accralate.mp3",
-    "CMR": "dubakupado.mp3",
-    "COD": "dubakupado.mp3",
-    "ETH": "monkoto.mp3",
-    "KEN": "zanzibar.mp3",
-    "TZA": "zanzibar.mp3",
-    "ZAF": "anglozulu.mp3",
-    "ZWE": "ave-marimba.mp3",
-    "GBR": "skye-cuillin.mp3",
-    "IRL": "galway.mp3",
-    "FRA": "parisian.mp3",
-    "DEU": "meanwhile-in-bavaria.mp3",
-    "AUT": "meanwhile-in-bavaria.mp3",
-    "ITA": "bushwick-tarantella.mp3",
-    "ESP": "sancho-panza-gets-a-latte.mp3",
-    "PRT": "suonatore-di-liuto.mp3",
-    "GRC": "greko-sketch.mp3",
-    "POL": "angevin.mp3",
-    "RUS": "padanaya-blokov.mp3",
-    "UKR": "old-road.mp3",
-    "SWE": "moorland.mp3",
-    "NOR": "moorland.mp3",
-    "FIN": "moorland.mp3",
-    "HUN": "master-of-the-feast.mp3",
-    "ROU": "teller-of-the-tales.mp3",
-    "SRB": "balzan-groove.mp3",
-    "NLD": "pippin-the-hunchback.mp3",
-    "TUR": "mystery-bazaar.mp3",
-    "IRN": "desert-city.mp3",
-    "IRQ": "ibn-al-noor.mp3",
-    "SAU": "tabuk.mp3",
-    "JOR": "tabuk.mp3",
-    "EGY": "temple-of-the-manes.mp3",
-    "MAR": "east-of-tunesia.mp3",
-    "DZA": "east-of-tunesia.mp3",
-    "TUN": "east-of-tunesia.mp3",
-    "LBN": "ibn-al-noor.mp3",
-    "SYR": "desert-city.mp3",
-    "ISR": "lachaim.mp3",
-    "MEX": "mariachi-snooze.mp3",
-    "BRA": "suvaco-do-cristo.mp3",
-    "ARG": "tango-de-manzana.mp3",
-    "URY": "tango-de-manzana.mp3",
-    "COL": "no-frills-cumbia.mp3",
-    "PER": "nu-flute.mp3",
-    "BOL": "nu-flute.mp3",
-    "CHL": "laid-back-guitars.mp3",
-    "CUB": "cuban-sandwich.mp3",
-    "VEN": "wepa.mp3",
-    "DOM": "notanico-merengue.mp3",
-    "PRI": "no-frills-salsa.mp3",
-    "JAM": "montego.mp3",
-    "KAZ": "the-sky-of-our-ancestors.mp3",
-    "UZB": "send-for-the-horses.mp3",
-    "GEO": "truth-in-the-stones.mp3",
-    "ARM": "silver-flame.mp3",
-    "AZE": "river-fire.mp3"
+    "ITA": "francesco-paolo-frontini-ciuri-ciuri-ogg.mp3",
+    "GRC": "rizitiko-crete-2-o-aitos.mp3",
+    "TUR": "katibim.mp3",
+    "ARG": "carlos-gardel-congojas-1924.mp3",
+    "URY": "carlos-gardel-pobre-amigo-1924.mp3",
+    "AZE": "trad-fde79cb2.mp3",
+    "ARM": "armenian-song-khumar.mp3",
+    "DZA": "trad-003d72ff.mp3",
+    "MAR": "trad-cf837e2e.mp3",
+    "POL": "01-moja-mamuliczko.mp3",
+    "UKR": "trad-31db960f.mp3",
+    "RUS": "ia-1901-gramophone-concert-records-g-23111.mp3",
+    "EST": "aleksander-late-kuldrannake-tallinna-meestelaulu.mp3",
+    "BGR": "still-white-danube.mp3",
+    "SWE": "ganglat-efter-gulamaraviten-smv-sva-ba-0021-01.mp3",
+    "FIN": "en-sjomansgosse-pa-stranden-stod-smv-sva-bb-5399.mp3",
+    "NOR": "stamning-av-langeleik-smv-mmt-24-06.mp3",
+    "DNK": "jungfrun-hon-sitter-i-buren-och-grater-smv-sva-b.mp3",
+    "ESP": "alborada-da-costa-da-morte.mp3",
+    "GBR": "ble-rwyt-ti-n-myned.mp3",
+    "CHN": "shanghainese-popular-song-possibly-part-three-of.mp3",
+    "TWN": "thinn-oo-oo.mp3",
+    "KOR": "doraji-taryeong.mp3",
+    "PRK": "jindo-arirang.mp3",
+    "JPN": "trad-63cf1b0a.mp3",
+    "VNM": "hat-trong-quan-o-van-tham.mp3",
+    "KHM": "phlom-slek.mp3",
+    "IDN": "jawa-tengah-cublak-cublak-suweng.mp3",
+    "PNG": "papua-yamko-rambe-yamko.mp3",
+    "IND": "traditional-bhil-wedding-farewell-song-vidai-gee.mp3",
+    "LKA": "20220613-valaga-funeraldirge.mp3",
+    "BGD": "trad-545e360b.mp3",
+    "AFG": "10-shenidam-ke-madari-megoft.mp3",
+    "PAK": "1-shabe-mahtab.mp3",
+    "IRN": "santur-by-mohammad-r-azadehfar.mp3",
+    "NPL": "audio-zill-big-3.mp3",
+    "NGA": "hausa-traditional-emirate-turbening-music-03.mp3",
+    "GHA": "kpanlogo-rhythmus.mp3",
+    "TGO": "blekete-rhythm.mp3",
+    "TZA": "ngoma-traditional-dance-song-tanzania.mp3",
+    "KEN": "ngoma-traditional-dance-song-tanzania.mp3",
+    "USA": "swing-low-sweet-chariot-fisk-jubilee-singers-190.mp3",
+    "MEX": "pajaro-carpintero-en-un-fandango-en-santiago-tux.mp3",
+    "PER": "arica-vals-montes-y-manrique-new-york-1911.mp3",
+    "BOL": "huacachina-tondero-montes-y-manrique-new-york-19.mp3",
+    "COL": "jorge-anez-avendano-and-victor-justiniano-rosale.mp3",
+    "VEN": "nacional-joropo-lionel-belasco-orchestra.mp3",
+    "TTO": "phil-madison-neighbor-next-door-1923-piano-by-li.mp3",
+    "JAM": "phil-madison-neighbor-next-door-1923-piano-by-li.mp3"
   },
   "byProfile": {
-    "east_asian": "ishikari-lore.mp3",
-    "southeast_asian": "cambodian-odyssey.mp3",
-    "south_asian": "jalandhar.mp3",
-    "west_african": "kumasi-groove.mp3",
-    "european": "master-of-the-feast.mp3",
-    "mena": "ibn-al-noor.mp3",
-    "latin": "no-frills-cumbia.mp3",
-    "andean": "nu-flute.mp3",
-    "mediterranean": "greko-sketch.mp3",
-    "sahel": "savannah-sketch.mp3",
-    "eurasian": "the-sky-of-our-ancestors.mp3",
-    "caucasus": "truth-in-the-stones.mp3"
+    "nw_european": "ble-rwyt-ti-n-myned.mp3",
+    "nordic": "ganglat-efter-gulamaraviten-smv-sva-ba-0021-01.mp3",
+    "central_european": "01-augustin-02-au-claire-de-la-lune-smv-78f-0570.mp3",
+    "east_european": "trad-31db960f.mp3",
+    "south_european": "francesco-paolo-frontini-ciuri-ciuri-ogg.mp3",
+    "balkan": "rizitiko-crete-2-o-aitos.mp3",
+    "anatolian": "katibim.mp3",
+    "caucasus": "armenian-song-khumar.mp3",
+    "levantine": "oud-music-by-andy-r-jordan-1v2-long.mp3",
+    "mesopotamian": "oud-music-by-andy-r-jordan-2v2.mp3",
+    "arabian": "oud-music-by-andy-r-jordan-1v2-short.mp3",
+    "iranian": "santur-by-mohammad-r-azadehfar.mp3",
+    "maghrebi": "trad-003d72ff.mp3",
+    "egyptian": "trad-003d72ff.mp3",
+    "north_indian": "traditional-bhil-wedding-farewell-song-vidai-gee.mp3",
+    "south_indian": "20220613-valaga-funeraldirge.mp3",
+    "pashtun_pakistani": "10-shenidam-ke-madari-megoft.mp3",
+    "bengali": "trad-545e360b.mp3",
+    "east_asian": "shanghainese-popular-song-possibly-part-three-of.mp3",
+    "central_asian": "trad-fde79cb2.mp3",
+    "himalayan": "audio-zill-big-3.mp3",
+    "siberian": "coucou-chant-populaire-tchouvache.mp3",
+    "mainland_sea": "hat-trong-quan-o-van-tham.mp3",
+    "southeast_asian": "jawa-tengah-cublak-cublak-suweng.mp3",
+    "austronesian": "riau-soleram.mp3",
+    "melanesian": "papua-yamko-rambe-yamko.mp3",
+    "west_african": "kpanlogo-rhythmus.mp3",
+    "central_african": "blekete-rhythm.mp3",
+    "east_african": "ngoma-traditional-dance-song-tanzania.mp3",
+    "horn_african": "ngoma-traditional-dance-song-tanzania.mp3",
+    "sahelian": "trad-cf837e2e.mp3",
+    "southern_african": "ngoma-traditional-dance-song-tanzania.mp3",
+    "african_diaspora": "swing-low-sweet-chariot-fisk-jubilee-singers-190.mp3",
+    "mesoamerican": "pajaro-carpintero-en-un-fandango-en-santiago-tux.mp3",
+    "andean": "arica-vals-montes-y-manrique-new-york-1911.mp3",
+    "caribbean_hispanic": "nacional-joropo-lionel-belasco-orchestra.mp3",
+    "southern_cone": "carlos-gardel-congojas-1924.mp3",
+    "european": "ble-rwyt-ti-n-myned.mp3",
+    "mena": "oud-music-by-andy-r-jordan-1v2-long.mp3",
+    "latin": "nacional-joropo-lionel-belasco-orchestra.mp3",
+    "south_asian": "traditional-bhil-wedding-farewell-song-vidai-gee.mp3",
+    "mediterranean": "francesco-paolo-frontini-ciuri-ciuri-ogg.mp3",
+    "sahel": "trad-cf837e2e.mp3",
+    "eurasian": "coucou-chant-populaire-tchouvache.mp3"
   },
   "meta": {
-    "ishikari-lore.mp3": {
-      "title": "Ishikari Lore",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Ishikari%20Lore%20%28ISRC%20USUAN1100192%29.mp3"
+    "ble-rwyt-ti-n-myned.mp3": {
+      "title": "Ble Rwyt Ti'n Myned?",
+      "artist": "Llywelyn2000",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3ABle%20Rwyt%20Ti%27n%20Myned%3F.wav"
     },
-    "cambodian-odyssey.mp3": {
-      "title": "Cambodian Odyssey",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Cambodian%20Odyssey%20%28ISRC%20USUAN1100585%29.mp3"
+    "ganglat-efter-gulamaraviten-smv-sva-ba-0021-01.mp3": {
+      "title": "Gånglåt efter Gulamåraviten - SMV - SVA BA 0021 01",
+      "artist": "traditional",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AG%C3%A5ngl%C3%A5t%20efter%20Gulam%C3%A5raviten%20-%20SMV%20-%20SVA%20BA%200021%2001.wav"
     },
-    "jalandhar.mp3": {
-      "title": "Jalandhar",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Jalandhar%20%28ISRC%20USUAN1400018%29.mp3"
+    "01-augustin-02-au-claire-de-la-lune-smv-78f-0570.mp3": {
+      "title": "01. Augustin; 02. Au claire de la lune - SMV - 78F 0570",
+      "artist": "traditional",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3A01.%20Augustin%3B%2002.%20Au%20claire%20de%20la%20lune%20-%20SMV%20-%2078F%200570.wav"
     },
-    "kumasi-groove.mp3": {
-      "title": "Kumasi Groove",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Kumasi%20Groove%20%28ISRC%20USUAN1100183%29.mp3"
+    "trad-31db960f.mp3": {
+      "title": "Дyдaрик (Хор Ленинградского радио и телевидения, Григорий Сандлер)",
+      "artist": "traditional",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3A%D0%94y%D0%B4a%D1%80%D0%B8%D0%BA%20%28%D0%A5%D0%BE%D1%80%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%20%D0%B8%20%D1%82%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%2C%20%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9%20%D0%A1%D0%B0%D0%BD%D0%B4%D0%BB%D0%B5%D1%80%29.flac"
     },
-    "master-of-the-feast.mp3": {
-      "title": "Master of the Feast",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Master%20of%20the%20Feast%20%28ISRC%20USUAN1400019%29.mp3"
+    "francesco-paolo-frontini-ciuri-ciuri-ogg.mp3": {
+      "title": "Francesco Paolo Frontini - Ciuri, Ciuri.ogg",
+      "artist": "Francesco Paolo Frontini / Pracchia-78",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AFrancesco%20Paolo%20Frontini%20-%20Ciuri%2C%20Ciuri.ogg.mp3"
     },
-    "ibn-al-noor.mp3": {
-      "title": "Ibn Al-Noor",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Ibn%20Al-Noor%20%28ISRC%20USUAN1100706%29.mp3"
+    "rizitiko-crete-2-o-aitos.mp3": {
+      "title": "Rizitiko - Crete 2 (O Aitos)",
+      "artist": "JTE Dimandix",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3ARizitiko%20-%20Crete%202%20%28O%20Aitos%29.mp3"
     },
-    "no-frills-cumbia.mp3": {
-      "title": "No Frills Cumbia",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:No%20Frills%20Cumbia%20%28ISRC%20USUAN1100275%29.mp3"
+    "katibim.mp3": {
+      "title": "Kâtibim",
+      "artist": "Original:  Various\n\nMusic engraving:  Baba66",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3AK%C3%A2tibim.mp3"
     },
-    "nu-flute.mp3": {
-      "title": "Nu Flute",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Nu%20Flute%20%28ISRC%20USUAN1100680%29.mp3"
+    "armenian-song-khumar.mp3": {
+      "title": "Armenian song KHUMAR",
+      "artist": "Արարատ Թրվանց",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AArmenian%20song%20KHUMAR.wav"
     },
-    "greko-sketch.mp3": {
-      "title": "Greko (Sketch)",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Greko%20%28Sketch%29%20%28ISRC%20USUAN1100389%29.mp3"
+    "oud-music-by-andy-r-jordan-1v2-long.mp3": {
+      "title": "Oud music by Andy R. Jordan 1V2 long",
+      "artist": "Andy R. Jordan",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AOud%20music%20by%20Andy%20R.%20Jordan%201V2%20long.mp3"
     },
-    "savannah-sketch.mp3": {
-      "title": "Savannah (Sketch)",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Savannah%20%28Sketch%29%20%28ISRC%20USUAN1100387%29.mp3"
+    "oud-music-by-andy-r-jordan-2v2.mp3": {
+      "title": "Oud music by Andy R. Jordan 2v2",
+      "artist": "Andy R. Jordan",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AOud%20music%20by%20Andy%20R.%20Jordan%202v2.mp3"
     },
-    "the-sky-of-our-ancestors.mp3": {
-      "title": "The Sky of our Ancestors",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:The%20Sky%20of%20our%20Ancestors%20%28ISRC%20USUAN1700056%29.mp3"
+    "oud-music-by-andy-r-jordan-1v2-short.mp3": {
+      "title": "Oud music by Andy R. Jordan 1V2 short",
+      "artist": "Andy R. Jordan",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AOud%20music%20by%20Andy%20R.%20Jordan%201V2%20short.mp3"
     },
-    "truth-in-the-stones.mp3": {
-      "title": "Truth in the Stones",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Truth%20in%20the%20Stones%20%28ISRC%20USUAN1700059%29.mp3"
+    "santur-by-mohammad-r-azadehfar.mp3": {
+      "title": "Santur by Mohammad R Azadehfar",
+      "artist": "Mohammad R Azadehfar",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3ASantur%20by%20Mohammad%20R%20Azadehfar.wav"
     },
-    "senbazuru.mp3": {
-      "title": "Senbazuru",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Senbazuru%20%28ISRC%20USUAN1100821%29.mp3"
+    "trad-003d72ff.mp3": {
+      "title": "الفرق بين أهليل و تقرابت",
+      "artist": "Muhammed amine benloulou",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3A%D8%A7%D9%84%D9%81%D8%B1%D9%82%20%D8%A8%D9%8A%D9%86%20%D8%A3%D9%87%D9%84%D9%8A%D9%84%20%D9%88%20%D8%AA%D9%82%D8%B1%D8%A7%D8%A8%D8%AA.flac"
     },
-    "eastern-thought.mp3": {
-      "title": "Eastern Thought",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Eastern%20Thought%20%28ISRC%20USUAN1100682%29.mp3"
+    "traditional-bhil-wedding-farewell-song-vidai-gee.mp3": {
+      "title": "Traditional Bhil Wedding Farewell Song (Vidai Geet) 01",
+      "artist": "Suyash Dwivedi",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3ATraditional%20Bhil%20Wedding%20Farewell%20Song%20%28Vidai%20Geet%29%2001.mp3"
     },
-    "mountain-emperor.mp3": {
-      "title": "Mountain Emperor",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Mountain%20Emperor%20%28ISRC%20USUAN1700012%29.mp3"
+    "20220613-valaga-funeraldirge.mp3": {
+      "title": "20220613 Valaga FuneralDirge",
+      "artist": "Ysfahan42",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3A20220613%20Valaga%20FuneralDirge.wav"
     },
-    "opium.mp3": {
-      "title": "Opium",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Opium%20%28ISRC%20USUAN1100371%29.mp3"
+    "10-shenidam-ke-madari-megoft.mp3": {
+      "title": "10-Shenidam ke madari megoft",
+      "artist": "Qasem Jo",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3A10-Shenidam%20ke%20madari%20megoft.flac"
     },
-    "tikopia.mp3": {
-      "title": "Tikopia",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Tikopia%20%28ISRC%20USUAN1100827%29.mp3"
+    "trad-545e360b.mp3": {
+      "title": "সাঁঝের তারকা আমি",
+      "artist": "traditional",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3A%E0%A6%B8%E0%A6%BE%E0%A6%81%E0%A6%9D%E0%A7%87%E0%A6%B0%20%E0%A6%A4%E0%A6%BE%E0%A6%B0%E0%A6%95%E0%A6%BE%20%E0%A6%86%E0%A6%AE%E0%A6%BF.mp3"
     },
-    "tiki-bar-mixer-by-kevin-macleod.mp3": {
-      "title": "Tiki Bar Mixer by Kevin MacLeod",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Tiki%20Bar%20Mixer%20by%20Kevin%20MacLeod.ogg"
+    "shanghainese-popular-song-possibly-part-three-of.mp3": {
+      "title": "Shanghainese popular song, possibly Part Three of Five, 127-127a (scy 2921-2922)",
+      "artist": "An unidentified group of Chinese musicians: \"These records [53-132, 53a-132a] we",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3AShanghainese%20popular%20song%2C%20possibly%20Part%20Three%20of%20Five%2C%20127-127a%20%28scy%202921-2922%29.mp3"
     },
-    "indore.mp3": {
-      "title": "Indore",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Indore%20%28ISRC%20USUAN1600041%29.mp3"
+    "trad-fde79cb2.mp3": {
+      "title": "مقام نوا اثر ",
+      "artist": "traditional",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3A%D9%85%D9%82%D8%A7%D9%85%20%D9%86%D9%88%D8%A7%20%D8%A7%D8%AB%D8%B1%20.wav"
     },
-    "dhaka.mp3": {
-      "title": "Dhaka",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Dhaka%20%28ISRC%20USUAN1400003%29.mp3"
+    "audio-zill-big-3.mp3": {
+      "title": "Audio Zill big 3",
+      "artist": "Hadi",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AAudio%20Zill%20big%203.mp3"
     },
-    "naraina.mp3": {
-      "title": "Naraina",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Naraina%20%28ISRC%20USUAN1400053%29.mp3"
+    "coucou-chant-populaire-tchouvache.mp3": {
+      "title": "Coucou (chant populaire tchouvache)",
+      "artist": "Poet unknown, Chuvash folk song",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3ACoucou%20%28chant%20populaire%20tchouvache%29.flac"
     },
-    "himalayan-atmosphere.mp3": {
-      "title": "Himalayan Atmosphere",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Himalayan%20Atmosphere%20%28ISRC%20USUAN1100204%29.mp3"
+    "hat-trong-quan-o-van-tham.mp3": {
+      "title": "Hát trống quân - Đỗ Văn Thâm",
+      "artist": "Đỗ Văn Thâm",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3AH%C3%A1t%20tr%E1%BB%91ng%20qu%C3%A2n%20-%20%C4%90%E1%BB%97%20V%C4%83n%20Th%C3%A2m.mp3"
     },
-    "mystery-bazaar.mp3": {
-      "title": "Mystery Bazaar",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Mystery%20Bazaar%20%28ISRC%20USUAN1700005%29.mp3"
+    "jawa-tengah-cublak-cublak-suweng.mp3": {
+      "title": "Jawa Tengah - Cublak-Cublak Suweng",
+      "artist": "Duoviotheo",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AJawa%20Tengah%20-%20Cublak-Cublak%20Suweng.wav"
     },
-    "tafi-maradi-no-voice.mp3": {
-      "title": "Tafi Maradi no voice",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Tafi%20Maradi%20no%20voice%20%28ISRC%20USUAN1100740%29.mp3"
+    "riau-soleram.mp3": {
+      "title": "Riau - Soleram",
+      "artist": "Duoviotheo",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3ARiau%20-%20Soleram.wav"
     },
-    "digya.mp3": {
-      "title": "Digya",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Digya%20%28ISRC%20USUAN1200080%29.mp3"
+    "papua-yamko-rambe-yamko.mp3": {
+      "title": "Papua - Yamko Rambe Yamko",
+      "artist": "Duoviotheo",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3APapua%20-%20Yamko%20Rambe%20Yamko.wav"
     },
-    "bumba-crossing.mp3": {
-      "title": "Bumba Crossing",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Bumba%20Crossing%20%28ISRC%20USUAN1500031%29.mp3"
+    "kpanlogo-rhythmus.mp3": {
+      "title": "Kpanlogo Rhythmus",
+      "artist": "UserMartin",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AKpanlogo%20Rhythmus.wav"
     },
-    "accralate.mp3": {
-      "title": "Accralate",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Accralate%20%28ISRC%20USUAN1100341%29.mp3"
+    "blekete-rhythm.mp3": {
+      "title": "Blekete rhythm",
+      "artist": "Natascia Silverio",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3ABlekete%20rhythm.wav"
     },
-    "dubakupado.mp3": {
-      "title": "Dubakupado",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Dubakupado%20%28ISRC%20USUAN1100834%29.mp3"
+    "ngoma-traditional-dance-song-tanzania.mp3": {
+      "title": "Ngoma Traditional Dance Song- Tanzania",
+      "artist": "Agness Abubakar Saidi",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3ANgoma%20Traditional%20Dance%20Song-%20Tanzania.flac"
     },
-    "monkoto.mp3": {
-      "title": "Monkoto",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Monkoto%20%28ISRC%20USUAN1100432%29.mp3"
+    "trad-cf837e2e.mp3": {
+      "title": "أهليل و اللغة الزناتية",
+      "artist": "Muhammed amine benloulou",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3A%D8%A3%D9%87%D9%84%D9%8A%D9%84%20%D9%88%20%D8%A7%D9%84%D9%84%D8%BA%D8%A9%20%D8%A7%D9%84%D8%B2%D9%86%D8%A7%D8%AA%D9%8A%D8%A9.flac"
     },
-    "zanzibar.mp3": {
-      "title": "Zanzibar",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Zanzibar%20%28ISRC%20USUAN1500006%29.mp3"
+    "swing-low-sweet-chariot-fisk-jubilee-singers-190.mp3": {
+      "title": "Swing Low, Sweet Chariot - Fisk Jubilee Singers (1909)",
+      "artist": "Written by Wallace Willis; recorded by the Fisk Jubilee Singers",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3ASwing%20Low%2C%20Sweet%20Chariot%20-%20Fisk%20Jubilee%20Singers%20%281909%29.mp3"
     },
-    "anglozulu.mp3": {
-      "title": "AngloZulu",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:AngloZulu%20%28ISRC%20USUAN1100411%29.mp3"
+    "pajaro-carpintero-en-un-fandango-en-santiago-tux.mp3": {
+      "title": "Pajaro carpintero en un fandango en Santiago tuxtla",
+      "artist": "Koffermejia",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3APajaro%20carpintero%20en%20un%20fandango%20en%20Santiago%20tuxtla.wav"
     },
-    "ave-marimba.mp3": {
-      "title": "Ave Marimba",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Ave%20Marimba%20%28ISRC%20USUAN1700024%29.mp3"
+    "arica-vals-montes-y-manrique-new-york-1911.mp3": {
+      "title": "Arica - Vals - Montes y Manrique - New York 1911",
+      "artist": "La Guardia Vieja",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3AArica%20-%20Vals%20-%20Montes%20y%20Manrique%20-%20New%20York%201911.mp3"
     },
-    "skye-cuillin.mp3": {
-      "title": "Skye Cuillin",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Skye%20Cuillin%20%28ISRC%20USUAN1100346%29.mp3"
+    "nacional-joropo-lionel-belasco-orchestra.mp3": {
+      "title": "Nacional joropo - Lionel Belasco Orchestra",
+      "artist": "Lionel Belasco",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3ANacional%20joropo%20-%20Lionel%20Belasco%20Orchestra.mp3"
     },
-    "galway.mp3": {
-      "title": "Galway",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Galway%20%28ISRC%20USUAN1700016%29.mp3"
+    "carlos-gardel-congojas-1924.mp3": {
+      "title": "Carlos Gardel - Congojas (1924)",
+      "artist": "traditional",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3ACarlos%20Gardel%20-%20Congojas%20%281924%29.flac"
     },
-    "parisian.mp3": {
-      "title": "Parisian",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Parisian%20%28ISRC%20USUAN1100120%29.mp3"
+    "carlos-gardel-pobre-amigo-1924.mp3": {
+      "title": "Carlos Gardel - Pobre amigo (1924)",
+      "artist": "traditional",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3ACarlos%20Gardel%20-%20Pobre%20amigo%20%281924%29.flac"
     },
-    "meanwhile-in-bavaria.mp3": {
-      "title": "Meanwhile in Bavaria",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Meanwhile%20in%20Bavaria%20%28ISRC%20USUAN1500057%29.mp3"
+    "01-moja-mamuliczko.mp3": {
+      "title": "01-Moja-mamuliczko",
+      "artist": "Borys Kozielski",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3A01-Moja-mamuliczko.mp3"
     },
-    "bushwick-tarantella.mp3": {
-      "title": "Bushwick Tarantella",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Bushwick%20Tarantella%20%28ISRC%20USUAN1300002%29.mp3"
+    "ia-1901-gramophone-concert-records-g-23111.mp3": {
+      "title": "Ты каждый день меня пытаешь. Анастасия Вяльцева (IA 1901-gramophone-concert-records-g.-231",
+      "artist": "Anastasia Vyaltseva / Erik Meyer-Helmund",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3A%D0%A2%D1%8B%20%D0%BA%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%BF%D1%8B%D1%82%D0%B0%D0%B5%D1%88%D1%8C.%20%D0%90%D0%BD%D0%B0%D1%81%D1%82%D0%B0%D1%81%D0%B8%D1%8F%20%D0%92%D1%8F%D0%BB%D1%8C%D1%86%D0%B5%D0%B2%D0%B0%20%28IA%201901-gramophone-concert-records-g.-23111%29.flac"
     },
-    "sancho-panza-gets-a-latte.mp3": {
-      "title": "Sancho Panza gets a Latte",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Sancho%20Panza%20gets%20a%20Latte%20%28ISRC%20USUAN1100088%29.mp3"
+    "aleksander-late-kuldrannake-tallinna-meestelaulu.mp3": {
+      "title": "Aleksander Läte - Kuldrannake (Tallinna Meestelaulu Selts, 1928)",
+      "artist": "Aleksander Läte, Tallinna Meestelaulu Selts",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3AAleksander%20L%C3%A4te%20-%20Kuldrannake%20%28Tallinna%20Meestelaulu%20Selts%2C%201928%29.flac"
     },
-    "suonatore-di-liuto.mp3": {
-      "title": "Suonatore di Liuto",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Suonatore%20di%20Liuto%20%28ISRC%20USUAN1400023%29.mp3"
+    "still-white-danube.mp3": {
+      "title": "Still White Danube - Тих Бял Дунав се вълнува",
+      "artist": "Original author: Ivan Karadzhov (published 1909)",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3AStill%20White%20Danube%20-%20%D0%A2%D0%B8%D1%85%20%D0%91%D1%8F%D0%BB%20%D0%94%D1%83%D0%BD%D0%B0%D0%B2%20%D1%81%D0%B5%20%D0%B2%D1%8A%D0%BB%D0%BD%D1%83%D0%B2%D0%B0.flac"
     },
-    "angevin.mp3": {
-      "title": "Angevin",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Angevin%20%28ISRC%20USUAN1200110%29.mp3"
+    "en-sjomansgosse-pa-stranden-stod-smv-sva-bb-5399.mp3": {
+      "title": "En sjömansgosse på stranden stod - SMV - SVA BB 5399 12",
+      "artist": "traditional",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AEn%20sj%C3%B6mansgosse%20p%C3%A5%20stranden%20stod%20-%20SMV%20-%20SVA%20BB%205399%2012.wav"
     },
-    "padanaya-blokov.mp3": {
-      "title": "Padanaya Blokov",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Padanaya%20Blokov%20%28ISRC%20USUAN1100606%29.mp3"
+    "stamning-av-langeleik-smv-mmt-24-06.mp3": {
+      "title": "Stämning av langeleik - SMV - MMT 24 06",
+      "artist": "traditional",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File%3ASt%C3%A4mning%20av%20langeleik%20-%20SMV%20-%20MMT%2024%2006.wav"
     },
-    "old-road.mp3": {
-      "title": "Old Road",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Old%20Road%20%28ISRC%20USUAN1100725%29.mp3"
+    "jungfrun-hon-sitter-i-buren-och-grater-smv-sva-b.mp3": {
+      "title": "Jungfrun hon sitter i buren och gråter - SMV - SVA BB 5395 03",
+      "artist": "traditional",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AJungfrun%20hon%20sitter%20i%20buren%20och%20gr%C3%A5ter%20-%20SMV%20-%20SVA%20BB%205395%2003.wav"
     },
-    "moorland.mp3": {
-      "title": "Moorland",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Moorland%20%28ISRC%20USUAN1200106%29.mp3"
+    "alborada-da-costa-da-morte.mp3": {
+      "title": "Alborada da Costa da Morte",
+      "artist": "SGaola",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AAlborada%20da%20Costa%20da%20Morte.wav"
     },
-    "teller-of-the-tales.mp3": {
-      "title": "Teller of the Tales",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Teller%20of%20the%20Tales%20%28ISRC%20USUAN1400020%29.mp3"
+    "thinn-oo-oo.mp3": {
+      "title": "Thinn-oo-oo",
+      "artist": "Tè Khái-sū (Kaihsu Tai)",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AThinn-oo-oo.mp3"
     },
-    "balzan-groove.mp3": {
-      "title": "Balzan Groove",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Balzan%20Groove%20%28ISRC%20USUAN1100311%29.mp3"
+    "doraji-taryeong.mp3": {
+      "title": "Doraji Taryeong",
+      "artist": "한국저작권위원회",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3ADoraji%20Taryeong.wav"
     },
-    "pippin-the-hunchback.mp3": {
-      "title": "Pippin the Hunchback",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Pippin%20the%20Hunchback%20%28ISRC%20USUAN1400005%29.mp3"
+    "jindo-arirang.mp3": {
+      "title": "Jindo Arirang",
+      "artist": "한국저작권위원회",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AJindo%20Arirang.wav"
     },
-    "desert-city.mp3": {
-      "title": "Desert City",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Desert%20City%20%28ISRC%20USUAN1100564%29.mp3"
+    "trad-63cf1b0a.mp3": {
+      "title": "伊丹のもとかき唄",
+      "artist": "Unknown authorUnknown author;",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3A%E4%BC%8A%E4%B8%B9%E3%81%AE%E3%82%82%E3%81%A8%E3%81%8B%E3%81%8D%E5%94%84.wav"
     },
-    "tabuk.mp3": {
-      "title": "Tabuk",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Tabuk%20%28ISRC%20USUAN1100818%29.mp3"
+    "phlom-slek.mp3": {
+      "title": "Phlom Slek",
+      "artist": "Rucisko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File%3APhlom%20Slek.wav"
     },
-    "temple-of-the-manes.mp3": {
-      "title": "Temple of the Manes",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Temple%20of%20the%20Manes%20%28ISRC%20USUAN1100053%29.mp3"
+    "1-shabe-mahtab.mp3": {
+      "title": "1-Shabe Mahtab",
+      "artist": "Qasem Jo",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3A1-Shabe%20Mahtab.flac"
     },
-    "east-of-tunesia.mp3": {
-      "title": "East of Tunesia",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:East%20of%20Tunesia%20%28ISRC%20USUAN1100246%29.mp3"
+    "hausa-traditional-emirate-turbening-music-03.mp3": {
+      "title": "Hausa traditional emirate turbening music 03",
+      "artist": "Anasskoko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File%3AHausa%20traditional%20emirate%20turbening%20music%2003.wav"
     },
-    "lachaim.mp3": {
-      "title": "Lachaim",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Lachaim%20%28ISRC%20USUAN1100412%29.mp3"
+    "huacachina-tondero-montes-y-manrique-new-york-19.mp3": {
+      "title": "Huacachina - Tondero - Montes y Manrique - New York 1911",
+      "artist": "La Guardia Vieja",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3AHuacachina%20-%20Tondero%20-%20Montes%20y%20Manrique%20-%20New%20York%201911.mp3"
     },
-    "mariachi-snooze.mp3": {
-      "title": "Mariachi Snooze",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Mariachi%20Snooze%20%28ISRC%20USUAN1100166%29.mp3"
+    "jorge-anez-avendano-and-victor-justiniano-rosale.mp3": {
+      "title": "Jorge Áñez Avendaño and Víctor Justiniano Rosales performing \"Ausencia\" in April 1920",
+      "artist": "Jorge Áñez Avendaño (1892–1952) and  Víctor Justiniano Rosales",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3AJorge%20%C3%81%C3%B1ez%20Avenda%C3%B1o%20and%20V%C3%ADctor%20Justiniano%20Rosales%20performing%20%22Ausencia%22%20in%20April%201920.mp3"
     },
-    "suvaco-do-cristo.mp3": {
-      "title": "Suvaco do Cristo",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Suvaco%20do%20Cristo%20%28ISRC%20USUAN1100867%29.mp3"
-    },
-    "tango-de-manzana.mp3": {
-      "title": "Tango de Manzana",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Tango%20de%20Manzana%20%28ISRC%20USUAN1100404%29.mp3"
-    },
-    "laid-back-guitars.mp3": {
-      "title": "Laid Back Guitars",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Laid%20Back%20Guitars%20%28ISRC%20USUAN1100181%29.mp3"
-    },
-    "cuban-sandwich.mp3": {
-      "title": "Cuban Sandwich",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Cuban%20Sandwich%20%28ISRC%20USUAN1600005%29.mp3"
-    },
-    "wepa.mp3": {
-      "title": "Wepa",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Wepa%20%28ISRC%20USUAN1700020%29.mp3"
-    },
-    "notanico-merengue.mp3": {
-      "title": "Notanico Merengue",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Notanico%20Merengue%20%28ISRC%20USUAN1100130%29.mp3"
-    },
-    "no-frills-salsa.mp3": {
-      "title": "No Frills Salsa",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:No%20Frills%20Salsa%20%28ISRC%20USUAN1100133%29.mp3"
-    },
-    "montego.mp3": {
-      "title": "Montego",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Montego%20%28ISRC%20USUAN1100808%29.mp3"
-    },
-    "send-for-the-horses.mp3": {
-      "title": "Send for the Horses",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Send%20for%20the%20Horses%20%28ISRC%20USUAN1700028%29.mp3"
-    },
-    "silver-flame.mp3": {
-      "title": "Silver Flame",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Silver%20Flame%20%28ISRC%20USUAN1700058%29.mp3"
-    },
-    "river-fire.mp3": {
-      "title": "River Fire",
-      "artist": "Kevin MacLeod (incompetech.com)",
-      "license": "CC BY 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:River%20Fire%20%28ISRC%20USUAN1700055%29.mp3"
+    "phil-madison-neighbor-next-door-1923-piano-by-li.mp3": {
+      "title": "Phil Madison - Neighbor Next Door (1923, Piano by Lionel Belasco)",
+      "artist": "Phil Madison / Lionel Belasco",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File%3APhil%20Madison%20-%20Neighbor%20Next%20Door%20%281923%2C%20Piano%20by%20Lionel%20Belasco%29.mp3"
     }
   }
 }
